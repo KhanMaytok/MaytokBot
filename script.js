@@ -31,7 +31,7 @@ module.exports = new Script({
 
             function updateSilent() {
                 switch (upperText) {
-                    case "APAGA LA BASE"
+                    case "APAGA LA BASE":
                         http.request(options, function(){}).end();
                         return Promise.resolve();
                     case "CONNECT ME":
