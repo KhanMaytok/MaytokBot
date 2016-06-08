@@ -4,12 +4,14 @@ const _ = require('lodash');
 const Script = require('smooch-bot').Script;
 var http = require('http');
 var apagado = {
-  host: 'http://54.149.121.113:4568',
-  path: '/'
+  host: 'http://54.149.121.113',
+  path: '/',
+  port: 4568
 };
 var encendido = {
-  host: 'http://54.149.121.113:4568',
-  path: '/enciende'
+  host: 'http://54.149.121.113',
+  path: '/enciende',
+  port: 4568
 };
 
 
