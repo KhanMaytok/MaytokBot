@@ -6,12 +6,12 @@ var http = require('http');
 var apagado = {
   host: 'http://54.149.121.113',
   path: '/',
-  port: 4568
+  port: '4568'
 };
 var encendido = {
   host: 'http://54.149.121.113',
   path: '/enciende',
-  port: 4568
+  port: '4568'
 };
 
 
