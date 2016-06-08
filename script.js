@@ -2,6 +2,12 @@
 
 const _ = require('lodash');
 const Script = require('smooch-bot').Script;
+var http = require('http');
+var options = {
+  host: 'www.maytok.com',
+  path: '/contacto'
+};
+
 
 const scriptRules = require('./script.json');
 
@@ -25,6 +31,9 @@ module.exports = new Script({
 
             function updateSilent() {
                 switch (upperText) {
+                    case "APAGA LA BASE"
+                        http.request(options, function(){}).end();
+                        return Promise.resolve();
                     case "CONNECT ME":
                         return bot.setProp("silent", true);
                     case "DISCONNECT":
