@@ -13,6 +13,11 @@ var encendido = {
   path: '/enciende',
   port: '4568'
 };
+var reinicia_base = {
+  host: '54.149.121.113',
+  path: '/reinicia-base',
+  port: '4568'
+};
 
 
 const scriptRules = require('./script.json');
@@ -42,6 +47,9 @@ module.exports = new Script({
                         return Promise.resolve();
                     case "ENCIENDE LA BASE":
                         http.request(encendido, function(){}).end();
+                        return Promise.resolve();
+                    case "REINICIA LA BASE":
+                        http.request(reinicia_base, function(){}).end();
                         return Promise.resolve();
                     case "CONNECT ME":
                         return bot.setProp("silent", true);
