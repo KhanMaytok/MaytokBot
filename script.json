@@ -1,6 +1,6 @@
 {
     "BOT": "¡Saludos!\nSoy el bot de la Corporación Maytok, creado como demo para un trabajo de Maestría de la UNPRG.\n![UNPRG](http://i.imgur.com/AFCHLmi.jpg)\n¿Quieres conocer más sobre mis funciones para demostración? %[Demuéstrame como comprar](postback:comprar) %[Sorpréndeme](postback:random_fact)",
-    "COMPRAR": "![](http://imgur.com/mhNE5f3.png)\n¿Te gustan?\A solo 19.99 soles y quedan solo 8 en stock",
+    "COMPRAR": "![](http://imgur.com/mhNE5f3.png)\n¿Te gustan?\nA solo 19.99 soles y quedan solo 8 en stock",
     "HOLA": "Hola, encantado de conocerte. ¿Quisieras contarle a los demás sobre mí? %[Contarle a todos](http://bit.ly/2cszqL1)",
     "I LOVE YOU": "Owww, qué anormal eres. Soy solo un programa :P",
     "TE AMO": "Owww, qué anormal eres. Soy solo un programa :P",
