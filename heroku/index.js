@@ -96,6 +96,7 @@ app.post('/webhook', function(req, res, next) {
     if(isPostback){
         console.log("\n\n\n\nES POSTBACK\n\n\n\nES POSTBACK\n\n\n\nES POSTBACK\n\n\n\nES POSTBACK");
         smoochPayload = req.body.postbacks[0].action.payload;
+        console.log("\n\n\n\EL PAYLOAD ES:" , smoochPayload);
         //Sending Reply
         //image http://i.imgur.com/mhNE5f3.png
         if (smoochPayload === 'here_for_the_bot') {
