@@ -83,11 +83,8 @@ app.post('/webhook', function(req, res, next) {
     console.log('El request es: ', req);
     
     const smoochPayload = req.body.postbacks[0].action.payload;
-    const userId = req.body.appUser._id;
-    
     console.log(smoochPayload);
-    console.log(userId);
-    
+
     var isPostback = req.body.trigger == "postback";
     var msg = '';
 
