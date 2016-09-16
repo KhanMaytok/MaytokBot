@@ -101,13 +101,18 @@ app.post('/webhook', function(req, res, next) {
         //image http://i.imgur.com/mhNE5f3.png
         if (smoochPayload === 'comprar') {
             console.log("\n\n\nVAMOS A COMPRAR\n\n\n");
-            console.log("\n\n\nEL PINCHE SPOCH API ES:\n\n\n", smoochApi);
+            smoochApi.conversations.sendMessage(userId, {
+                text: 'Así que quieres comprar',
+                role: 'appMaker'
+            });
             smoochApi.conversations.sendMessage(userId, {
                 text: '![](http://shoes.com/sneakers.png)\n¿Qué tal estos?\nSolo a S/.150.00\n Quedan 14 en stock\n $[Buy Now]($49.99)',
                 role: 'appMaker'
             });
+            res.end();
         } else if (smoochPayload === 'RESERVE_MONDAY') {
             CalendarController.reserve(userId, 'monday');
+            res.end();
         }
     }
     
