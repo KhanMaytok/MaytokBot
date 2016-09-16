@@ -79,6 +79,8 @@ if (process.env.SERVICE_URL) {
 }
 
 app.post('/webhook', function(req, res, next) {
+    console.log('Hemos recibido un WebHook');
+    console.log('El request es: ', req);
     var isPostback = req.body.trigger == "postback";
     var msg = '';
 
