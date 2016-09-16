@@ -80,6 +80,10 @@ if (process.env.SERVICE_URL) {
 
 app.post('/webhook', function(req, res, next) {
     console.log('Hemos recibido un WebHook');
+    
+    const smoochApi = new SmoochCore({
+        jwt
+    });
 
     const smoochPayload = req.body.postbacks[0].action.payload;
     console.log('El Payload es: ', smoochPayload);
