@@ -90,6 +90,18 @@ app.post('/webhook', function(req, res, next) {
 
     const appUser = req.body.appUser;
     const userId = appUser.userId || appUser._id;
+    
+    //Sending Reply
+    if (smoochPayload === 'here_for_the_bot') {
+        smoochApi.conversations.sendMessage(userId, {
+            text: 'A cow walks into a bar...',
+            role: 'appMaker'
+        });
+    } else if (smoochPayload === 'RESERVE_MONDAY') {
+        CalendarController.reserve(userId, 'monday');
+    }
+
+    
     const stateMachine = new StateMachine({
         script,
         bot: new BetterSmoochApiBot({
