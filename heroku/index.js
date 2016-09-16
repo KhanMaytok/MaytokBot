@@ -84,17 +84,9 @@ app.post('/webhook', function(req, res, next) {
     
     const smoochPayload = req.body.postbacks[0].action.payload;
     const userId = req.body.appUser._id;
-
-    if (smoochPayload === 'TELL_ME_JOKE') {
-        smoochApi.conversations.sendMessage(userId, {
-            text: 'A cow walks into a bar...',
-            role: 'appMaker'
-        });
-    } else if (smoochPayload === 'RESERVE_MONDAY') {
-        CalendarController.reserve(userId, 'monday');
-    }
     
-    
+    console.log(smoochPayload);
+    console.log(userId);
     
     var isPostback = req.body.trigger == "postback";
     var msg = '';
