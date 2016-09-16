@@ -80,14 +80,12 @@ if (process.env.SERVICE_URL) {
 
 app.post('/webhook', function(req, res, next) {
     console.log('Hemos recibido un WebHook');
-    
+    var smoochPayload = '';
     const smoochApi = new SmoochCore({
         jwt
     });
-
-    const smoochPayload = req.body.postbacks[0].action.payload;
-    console.log('El Payload es: ', smoochPayload);
-    console.log('Los postbacks son: ', req.body.postbacks);
+    
+    
 
     var isPostback = req.body.trigger == "postback";
     var msg = '';
@@ -95,17 +93,19 @@ app.post('/webhook', function(req, res, next) {
     const appUser = req.body.appUser;
     const userId = appUser.userId || appUser._id;
     
-    //Sending Reply
-    //image http://i.imgur.com/mhNE5f3.png
-    if (smoochPayload === 'here_for_the_bot') {
-        smoochApi.conversations.sendMessage(userId, {
-            text: '![](http://shoes.com/sneakers.png)\n¿Qué tal estos?\nSolo a S/.150.00\n Quedan 14 en stock\n $[Buy Now]($49.99)',
-            role: 'appMaker'
-        });
-    } else if (smoochPayload === 'RESERVE_MONDAY') {
-        CalendarController.reserve(userId, 'monday');
+    if(isPostback){
+        smoochPayload = req.body.postbacks[0].action.payload;
+        //Sending Reply
+        //image http://i.imgur.com/mhNE5f3.png
+        if (smoochPayload === 'here_for_the_bot') {
+            smoochApi.conversations.sendMessage(userId, {
+                text: '![](http://shoes.com/sneakers.png)\n¿Qué tal estos?\nSolo a S/.150.00\n Quedan 14 en stock\n $[Buy Now]($49.99)',
+                role: 'appMaker'
+            });
+        } else if (smoochPayload === 'RESERVE_MONDAY') {
+            CalendarController.reserve(userId, 'monday');
+        }
     }
-
     
     const stateMachine = new StateMachine({
         script,
