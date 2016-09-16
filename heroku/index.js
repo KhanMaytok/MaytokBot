@@ -80,10 +80,10 @@ if (process.env.SERVICE_URL) {
 
 app.post('/webhook', function(req, res, next) {
     console.log('Hemos recibido un WebHook');
-    console.log('El request es: ', req);
-    
+
     const smoochPayload = req.body.postbacks[0].action.payload;
-    console.log(smoochPayload);
+    console.log('El Payload es: ', smoochPayload);
+    console.log('Los postbacks son: ', req.body.postbacks);
 
     var isPostback = req.body.trigger == "postback";
     var msg = '';
