@@ -96,12 +96,12 @@ app.post('/webhook', function(req, res, next) {
     if(isPostback){
         console.log("\n\n\n\nES POSTBACK\n\n\n\nES POSTBACK\n\n\n\nES POSTBACK\n\n\n\nES POSTBACK");
         smoochPayload = req.body.postbacks[0].action.payload;
-        console.log("\n\n\n\EL PAYLOAD ES:" , smoochPayload);
+        console.log("\n\n\nEL PAYLOAD ES:" , smoochPayload);
         //Sending Reply
         //image http://i.imgur.com/mhNE5f3.png
         if (smoochPayload === 'comprar') {
-            console.log("\n\n\n\VAMOS A COMPRAR\n\n\n\");
-            onsole.log("\n\n\n\EL PINCHE SPOCH API ES:\n\n\n\", smoochApi);
+            console.log("\n\n\nVAMOS A COMPRAR\n\n\n");
+            onsole.log("\n\n\nEL PINCHE SPOCH API ES:\n\n\n", smoochApi);
             smoochApi.conversations.sendMessage(userId, {
                 text: '![](http://shoes.com/sneakers.png)\n¿Qué tal estos?\nSolo a S/.150.00\n Quedan 14 en stock\n $[Buy Now]($49.99)',
                 role: 'appMaker'
