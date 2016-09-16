@@ -101,13 +101,13 @@ app.post('/webhook', function(req, res, next) {
         //image http://i.imgur.com/mhNE5f3.png
         if (smoochPayload === 'comprar') {
             console.log("\n\n\nVAMOS A COMPRAR\n\n\n");
-            smooch.appUsers.sendMessage('userId', {
+            smoochApi.conversations.sendMessage('userId', {
                 text: 'Quiero comprar zapatos',
                 role: 'appMaker',
                 actions: [
                   {
                     type: 'buy',
-                    text: 'Buy vinegar',
+                    text: 'Los quiero ahora',
                     amount: 8000
                   }
                 ]
@@ -118,13 +118,6 @@ app.post('/webhook', function(req, res, next) {
                 mediaUrl: 'http://imgur.com/mhNE5f3.png',
                 mediaType: 'image/jpeg'
             });
-            smoochApi.conversations.sendMessage(userId, {
-                text: 'Así que quieres comprar sneakers. ¿Te gustan estos?',
-                role: 'appMaker',
-                mediaUrl: 'http://imgur.com/mhNE5f3.png',
-                mediaType: 'image/jpeg'
-            });
-            
             res.end();
         } else if (smoochPayload === 'RESERVE_MONDAY') {
             CalendarController.reserve(userId, 'monday');
