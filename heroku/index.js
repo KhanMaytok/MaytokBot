@@ -94,7 +94,7 @@ app.post('/webhook', function(req, res, next) {
     const userId = appUser.userId || appUser._id;
     
     if(isPostback){
-        console.log(""\n\n\n\nES POSTBACK\n\n\n\nES POSTBACK\n\n\n\nES POSTBACK\n\n\n\nES POSTBACK");
+        console.log("\n\n\n\nES POSTBACK\n\n\n\nES POSTBACK\n\n\n\nES POSTBACK\n\n\n\nES POSTBACK");
         smoochPayload = req.body.postbacks[0].action.payload;
         //Sending Reply
         //image http://i.imgur.com/mhNE5f3.png
