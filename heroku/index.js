@@ -102,7 +102,7 @@ app.post('/webhook', function(req, res, next) {
         if (smoochPayload === 'comprar') {
             console.log("\n\n\nVAMOS A COMPRAR\n\n\n");
             smoochApi.conversations.sendMessage(userId, {
-                text: 'Así que quieres comprar',
+                text: 'Así que quieres comprar\n[ZAPATOS](http://imgur.com/mhNE5f3)',
                 role: 'appMaker'
             });
             smoochApi.conversations.sendMessage(userId, {
