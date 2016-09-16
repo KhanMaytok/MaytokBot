@@ -99,7 +99,7 @@ app.post('/webhook', function(req, res, next) {
         console.log("\n\n\n\EL PAYLOAD ES:" , smoochPayload);
         //Sending Reply
         //image http://i.imgur.com/mhNE5f3.png
-        if (smoochPayload === 'here_for_the_bot') {
+        if (smoochPayload === 'comprar') {
             smoochApi.conversations.sendMessage(userId, {
                 text: '![](http://shoes.com/sneakers.png)\n¿Qué tal estos?\nSolo a S/.150.00\n Quedan 14 en stock\n $[Buy Now]($49.99)',
                 role: 'appMaker'
