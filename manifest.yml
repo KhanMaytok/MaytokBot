@@ -1,0 +1,9 @@
+---
+buildpack: https://github.com/cloudfoundry/nodejs-buildpack.git
+applications: #Reference http://docs.cloudfoundry.com/docs/using/deploying-apps/manifest.html
+- name: alfred #Application Name. Unique to the user's Space
+  memory: 1024M #The maximum memory to allocate to each application instance
+  instances: 1 #The number of instances of the application to start
+  path: ./heroku/ #Path to the application to be pushed
+  command: node index.js #The command to use to start the application
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack.git
