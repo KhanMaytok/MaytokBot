@@ -70,7 +70,7 @@ module.exports = new Script({
                 }
 
                 if (!_.has(scriptRules, upperText)) {
-                    return bot.say(`Lo siento, parece que mi creador aun no me enseña cómo responder a tu pedido.`).then(() => 'speak');
+                    return bot.say(`:)`).then(() => 'speak');
                 }
 
                 var response = scriptRules[upperText];
